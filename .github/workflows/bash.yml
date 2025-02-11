@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - 'Dockerfile'
-      - .github/workflows/docker-publish.yml # or whatever you named the file
-      - 'conda-linux-64.lock'
+    ## Commented out because redundant
+    # paths:
+    #   - 'Dockerfile'
+    #   - .github/workflows/bash.yml # or whatever you named the file
+    #   - 'conda-linux-64.lock'
 
 jobs:
   run_bash_command:
@@ -25,5 +26,5 @@ jobs:
             pwd
             ls -a
 
-      - name: Run multiple commands manually if already saved in bash file
+      - name: Run multiple commands manually from bash file
         run: bash scripts/bash.sh
